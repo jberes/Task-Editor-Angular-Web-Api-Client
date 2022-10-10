@@ -1,0 +1,12 @@
+<div class="column-layout group">
+  <igx-grid [data]="tasksWebApiApiTasks" primaryKey="taskId" displayDensity="cosy" [allowFiltering]="true" filterMode="excelStyleFilter" class="grid">
+    <igx-column header="taskId" field="taskId" dataType="number" [sortable]="true" title="taskId"></igx-column>
+    <igx-column header="taskName" field="taskName" dataType="string" [sortable]="true" title="taskName"></igx-column>
+    <igx-column header="dateAdded" field="dateAdded" dataType="string" [sortable]="true" title="dateAdded"></igx-column>
+    <igx-column header="dateUpdated" field="dateUpdated" dataType="string" [sortable]="true" title="dateUpdated"></igx-column>
+    <igx-column header="dateDue" field="dateDue" dataType="string" [sortable]="true" title="dateDue"></igx-column>
+    <igx-column header="projectId" field="projectId" dataType="number" [sortable]="true" title="projectId"></igx-column>
+    <igx-column header="assignedToEmail" field="assignedToEmail" dataType="string" [sortable]="true" title="assignedToEmail"></igx-column>
+    <igx-column header="priority" field="priority" dataType="number" [sortable]="true" title="priority"></igx-column>
+  </igx-grid>
+</div>
