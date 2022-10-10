@@ -1,5 +1,12 @@
 <div class="column-layout group">
-  <igx-grid [data]="tasksWebApiApiTasks" primaryKey="taskId" displayDensity="cosy" cellSelection="multiple" [rowEditable]="true" [moving]="true" [allowFiltering]="true" filterMode="excelStyleFilter" class="grid">
+  <igx-grid #grid [data]="tasksWebApiApiTasks" primaryKey="taskId" displayDensity="cosy" cellSelection="multiple" 
+    [rowEditable]="true" [moving]="true" [allowFiltering]="true" filterMode="excelStyleFilter" class="grid"
+    
+    (rowAdded)="rowAdded($event)"
+    (rowDeleted)="rowDeleted($event)"
+    (rowEditDone)="rowEdited($event)"
+    
+    >
     <igx-grid-toolbar>
       <igx-grid-toolbar-actions>
         <igx-grid-toolbar-pinning></igx-grid-toolbar-pinning>
@@ -22,4 +29,5 @@
       <igx-grid-editing-actions [addRow]="true"></igx-grid-editing-actions>
     </igx-action-strip>
   </igx-grid>
+  <igx-snackbar #snackbar [outlet]='grid'></igx-snackbar>
 </div>
