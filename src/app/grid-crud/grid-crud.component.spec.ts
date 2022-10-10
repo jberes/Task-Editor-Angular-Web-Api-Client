@@ -3,7 +3,7 @@ import { FormsModule } from '@angular/forms';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 
-import { IgxGridModule } from 'igniteui-angular';
+import { IgxGridModule, IgxActionStripModule } from 'igniteui-angular';
 import { GridCrudComponent } from './grid-crud.component';
 
 describe('GridCrudComponent', () => {
@@ -13,7 +13,7 @@ describe('GridCrudComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ GridCrudComponent ],
-      imports: [ NoopAnimationsModule, FormsModule, HttpClientTestingModule, IgxGridModule ]
+      imports: [ NoopAnimationsModule, FormsModule, HttpClientTestingModule, IgxGridModule, IgxActionStripModule ]
     })
     .compileComponents();
   });
