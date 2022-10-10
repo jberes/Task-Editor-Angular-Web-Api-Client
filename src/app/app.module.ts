@@ -4,7 +4,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { GridCrudComponent } from './grid-crud/grid-crud.component';
-import { IgxGridModule, IgxNavbarModule, IgxAvatarModule, IgxButtonModule, IgxRippleModule } from 'igniteui-angular';
+import { IgxGridModule, IgxActionStripModule, IgxNavbarModule, IgxAvatarModule, IgxButtonModule, IgxRippleModule } from 'igniteui-angular';
 import { FormsModule } from '@angular/forms';
 import { View2Component } from './view2/view2.component';
 import { View3Component } from './view3/view3.component';
@@ -23,6 +23,7 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     BrowserAnimationsModule,
     IgxGridModule,
+    IgxActionStripModule,
     FormsModule,
     IgxNavbarModule,
     IgxAvatarModule,
