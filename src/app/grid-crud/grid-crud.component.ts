@@ -1,8 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { TasksWebApiService } from '../services/tasks-web-api.service';
-import { Task } from '../models/tasks.model'
+import { Task, TaskNN } from '../models/tasks.model'
 import { IGridEditDoneEventArgs, IgxGridComponent, IgxSnackbarComponent, IRowDataEventArgs } from 'igniteui-angular';
+import { JsonPipe } from '@angular/common';
 
 @Component({
   selector: 'app-grid-crud',
@@ -26,8 +27,25 @@ export class GridCrudComponent implements OnInit {
   }
 
   async rowAdded(event: IRowDataEventArgs) {
+
     var newTask = await this.tasksWebApiService.addTask(event.data);
-    console.log('This is the New Task ID: ' + newTask.taskId)
+    console.log('This is the New Task ID: ' + newTask.taskId);
+    console.log('This is the New Task: ' + newTask);
+    console.log('This is the New Task ID Stringify: ' + JSON.stringify(newTask));
+    
+    console.log("Type Is: " + typeof newTask);
+    // var t = new Task();
+    // t.taskId = newTask.taskID;
+    // t.assignedToEmail = newTask.assignedToEmail;
+    // t.dateAdded = newTask.dateAdded;
+    // t.dateDue = newTask.dateDue;
+    // t.dateUpdated = newTask.dateUpdated;
+    // t.projectId = newTask.projectID;
+    // t.taskName = newTask.taskName;
+    // t.priority = newTask.priority;
+
+    // console.log("T is : " + JSON.stringify(t));
+
     this.grid.updateRow(newTask, event.data.taskId);
   }
 
