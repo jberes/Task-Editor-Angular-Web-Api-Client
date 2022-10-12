@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { firstValueFrom, Observable } from 'rxjs';
 import { Task } from '../models/tasks.model';
-import { TaskNN } from '../models/tasks.model';
 
 const API_ENDPOINT = 'https://localhost:7021/api';
 
