@@ -22,7 +22,7 @@ return this.http.get<Task[]>(`API_ENDPOINT/tasks`);
   public async addTask(task: Task): Promise<Task> {
     var headers = new HttpHeaders({ 'Content-Type': 'application/json; charset=utf-8' });
     var body = JSON.stringify(task);
-    return await firstValueFrom(this.http.post<Task>(`${API_ENDPOINT}/task_dto/`, body, { headers }));    
+    return await firstValueFrom(this.http.post<Task>(`${API_ENDPOINT}/task_sp/`, body, { headers }));    
   }
 
   public async updateTask(task: Task): Promise<Task> {
@@ -34,5 +34,4 @@ return this.http.get<Task[]>(`API_ENDPOINT/tasks`);
   public async deleteTask(task: Task): Promise<Task> {
     return await firstValueFrom(this.http.delete<Task>(`${API_ENDPOINT}/task_sp/${task.taskId}`));
   }
-
 }

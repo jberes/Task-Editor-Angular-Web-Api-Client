@@ -27,6 +27,9 @@ export class GridCrudComponent implements OnInit {
 
   async rowAdded(event: IRowDataEventArgs) {
     var newTask = await this.tasksWebApiService.addTask(event.data);
+    console.log("event.data.taskId: " + event.data.taskId);
+    console.log(newTask);
+    console.log(JSON.stringify(newTask))
     this.grid.updateRow(newTask, event.data.taskId);
   }
 
@@ -39,4 +42,4 @@ export class GridCrudComponent implements OnInit {
       await this.tasksWebApiService.updateTask(event.newValue);
     }
   }
-}
+};
